@@ -2,6 +2,7 @@
 Contains the FlowBuilder and Flow classes, which implement the core workflow
 construction and execution APIs (respectively).
 """
+
 import logging
 import os
 import shutil
@@ -740,9 +741,9 @@ class FlowBuilder:
                 and isinstance(old_name_provider, ValueProvider)
                 and len(old_name_provider._value_tuples_by_case_key.keys()) == 1
             ):
-                (
-                    (old_flow_name,),
-                ) = old_name_provider._value_tuples_by_case_key.values()
+                ((old_flow_name,),) = (
+                    old_name_provider._value_tuples_by_case_key.values()
+                )
                 new_flow_name = flow.name
                 if old_flow_name == new_flow_name and not allow_name_match:
                     raise ValueError(
@@ -1280,9 +1281,9 @@ class Flow:
                     ancestor_result_group = self._deriver.derive(
                         entity_dnode_from_descriptor(ancestor_name)
                     )
-                    ancestor_key_space_by_name[
-                        ancestor_name
-                    ] = ancestor_result_group.key_space
+                    ancestor_key_space_by_name[ancestor_name] = (
+                        ancestor_result_group.key_space
+                    )
                     for ancestor_result in ancestor_result_group:
                         ancestor_case_key = ancestor_result.task_key.case_key
                         ancestor_values_by_case_key_by_name[ancestor_name][
