@@ -80,4 +80,3 @@ Built-In Decorators
 .. autofunction:: bionic.persist
 .. autofunction:: bionic.pyplot
 .. autofunction:: bionic.version
-
