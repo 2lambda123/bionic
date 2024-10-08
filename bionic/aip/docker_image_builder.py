@@ -2,6 +2,7 @@
 Builds a docker image for Google AI Platform execution using the current Python
 environment.
 """
+
 import pathlib
 import subprocess
 from concurrent.futures import Future

@@ -1,6 +1,7 @@
 """
 Data model for task running on AI platform
 """
+
 import logging
 import pickle
 import time
